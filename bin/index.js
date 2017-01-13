@@ -25,4 +25,4 @@ git.isGit(pwd, function (exists) {
 
 const packageFile = require(path.join(pwd, 'package.json'));
 
-console.log(semver(packageFile.version));
+console.log(semver(packageFile.version).raw);
