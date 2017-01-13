@@ -7,13 +7,15 @@ const npm = require('../lib/npm');
 git.dirty();
 git.version();
 
-console.log('npm', npm.version().raw);
+const npmVersion = npm.version();
+console.log('npm', npmVersion.raw);
 
 
 const semver = require('semver');
 
-function nextVersion(version, identifier='patch') {
-  return semver.inc(version, identifier);
+function getNextVersion(version, identifier='patch') {
+  return version.inc(identifier);
 }
 
-console.log('next', nextVersion('0.1.2', 'major'));
+const nextVersion = getNextVersion(npmVersion, 'major');
+console.log('next', nextVersion.raw);
