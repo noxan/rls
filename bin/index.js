@@ -7,7 +7,7 @@ const npm = require('../lib/npm');
 git.dirty();
 git.version();
 
-npm.version();
+console.log('npm', npm.version().raw);
 
 
 const semver = require('semver');
