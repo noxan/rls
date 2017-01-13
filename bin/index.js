@@ -4,7 +4,12 @@
 const git = require('../lib/git');
 const npm = require('../lib/npm');
 
-git.dirty();
+git.dirty(function (err, dirty) {
+  if (err) {
+    throw err;
+  }
+  console.log('dirty', dirty);
+});
 git.version();
 
 const npmVersion = npm.version();
