@@ -34,9 +34,9 @@ gittags(function (err, tags) {
   }
 
   const latestTag = tags[0];
-  console.log(latestTag);
+  console.log('git', latestTag);
 });
 
 const packageFile = require(path.join(pwd, 'package.json'));
 
-console.log(semver(packageFile.version).raw);
+console.log('npm', semver(packageFile.version).raw);
