@@ -13,5 +13,14 @@
   "dependencies": {
     "git-state": "3.1.0",
     "semver": "5.3.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noxan/rls.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noxan/rls/issues"
+  },
+  "homepage": "https://github.com/noxan/rls#readme"
 }
