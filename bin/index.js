@@ -10,7 +10,12 @@ git.dirty(function (err, dirty) {
   }
   console.log('dirty', dirty);
 });
-git.version();
+git.version(function (err, version) {
+  if (err) {
+    throw err;
+  }
+  console.log('git', version);
+});
 
 const npmVersion = npm.version();
 console.log('npm', npmVersion.raw);
