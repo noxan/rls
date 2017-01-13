@@ -3,6 +3,7 @@
 const process = require('process');
 const path = require('path');
 const git = require('git-state');
+const gittags = require('git-semver-tags');
 const semver = require('semver');
 
 const pwd = process.cwd();
@@ -21,6 +22,19 @@ git.isGit(pwd, function (exists) {
 
     console.log('dirty', dirty);
   });
+});
+
+gittags(function (err, tags) {
+  if (err) {
+    throw err;
+  }
+
+  if (tags.length < 1) {
+    throw new Error('No git releases so far.');
+  }
+
+  const latestTag = tags[0];
+  console.log(latestTag);
 });
 
 const packageFile = require(path.join(pwd, 'package.json'));
