@@ -14,7 +14,8 @@
     "args": "2.2.3",
     "git-semver-tags": "1.1.2",
     "git-state": "3.1.0",
-    "semver": "5.3.0"
+    "semver": "5.3.0",
+    "simple-git": "1.65.0"
   },
   "devDependencies": {},
   "repository": {
