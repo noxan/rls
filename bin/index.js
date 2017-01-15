@@ -44,4 +44,5 @@ console.log('next', identifier, 'is', nextVersion.raw);
 
 if (!flags.dryRun) {
   manifest.updateVersion(nextVersion);
+  git.update(nextVersion);
 }
