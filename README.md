@@ -29,6 +29,10 @@ Release new major version, e.g. `1.2.3` -> `2.0.0`
 
     $ rls --major
 
+Uncertain what will happen? Use the `--dry-run` flag to get a preview of the changes without anything being changed:
+
+    $ rls <other flags...> --dry-run
+
 ## Inspiration
 
 * ember has a nice release command, https://github.com/lytics/ember-cli-release
