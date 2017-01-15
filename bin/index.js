@@ -33,6 +33,7 @@ function getNextVersion(version, identifier='patch') {
 args
   .option('major', 'Major release')
   .option(['n', 'minor'], 'Minor release (overridden by --major)')
+  .option('dry-run', 'Do not perform any change but provide a preview of what would be changed.');
 
 const flags = args.parse(process.argv);
 
@@ -41,4 +42,6 @@ const identifier = flags.major ? 'major' : flags.minor ? 'minor' : 'patch';
 const nextVersion = getNextVersion(npmVersion, identifier);
 console.log('next', identifier, 'is', nextVersion.raw);
 
-manifest.updateVersion(nextVersion);
+if (!flags.dryRun) {
+  manifest.updateVersion(nextVersion);
+}
