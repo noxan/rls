@@ -37,3 +37,4 @@ Uncertain what will happen? Use the `--dry-run` flag to get a preview of the cha
 
 * ember has a nice release command, https://github.com/lytics/ember-cli-release
 * zeit/release is the same, with just a lot of changelog management on top, https://github.com/zeit/release
+* https://github.com/sindresorhus/np
