@@ -17,11 +17,15 @@ And helps you counting in semantic versions.
 
 ## Usage
 
+Release a new patch version, e.g. `1.2.3` -> `1.2.4`
+
     $ rls
 
-With options for semantic versioning:
+Release new feature version, e.g. `1.2.3` -> `1.3.0`
 
     $ rls --minor
+
+Release new major version, e.g. `1.2.3` -> `2.0.0`
 
     $ rls --major
 
