@@ -5,6 +5,7 @@ const process = require('process');
 
 const git = require('../lib/git');
 const npm = require('../lib/npm');
+const manifest = require('../lib/manifest');
 
 git.dirty(function (err, dirty) {
   if (err) {
@@ -39,3 +40,5 @@ const identifier = flags.major ? 'major' : flags.minor ? 'minor' : 'patch';
 
 const nextVersion = getNextVersion(npmVersion, identifier);
 console.log('next', identifier, 'is', nextVersion.raw);
+
+manifest.updateVersion(nextVersion);
