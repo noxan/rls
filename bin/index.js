@@ -30,11 +30,13 @@ git.dirty().then(
       throw new Error('Git is dirty, please commit your changes before creating a release.');
     }
 
-    git.version().then(version => {
-      console.log('git', version)
+    const npmVersion = npm.version();
 
-      const npmVersion = npm.version();
+    git.version().then(version => {
+      console.log('git', version);
       console.log('npm', npmVersion.raw);
+
+      // TODO: raise expection if npm and git version do not match
 
       const nextVersion = getNextVersion(npmVersion, identifier);
       console.log('next', identifier, 'is', nextVersion.raw);
