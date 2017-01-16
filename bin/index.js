@@ -30,19 +30,19 @@ git.dirty().then(
       throw new Error('Git is dirty, please commit your changes before creating a release.');
     }
 
-    git.version().then(
-      version => console.log('git', version)
-    );
+    git.version().then(version => {
+      console.log('git', version)
 
-    const npmVersion = npm.version();
-    console.log('npm', npmVersion.raw);
+      const npmVersion = npm.version();
+      console.log('npm', npmVersion.raw);
 
-    const nextVersion = getNextVersion(npmVersion, identifier);
-    console.log('next', identifier, 'is', nextVersion.raw);
+      const nextVersion = getNextVersion(npmVersion, identifier);
+      console.log('next', identifier, 'is', nextVersion.raw);
 
-    if (!flags.dryRun) {
-      manifest.updateVersion(nextVersion);
-      git.update(nextVersion);
-    }
+      if (!flags.dryRun) {
+        manifest.updateVersion(nextVersion);
+        git.update(nextVersion);
+      }
+    });
   }
 );
