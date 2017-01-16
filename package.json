@@ -17,7 +17,9 @@
     "semver": "5.3.0",
     "simple-git": "1.65.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ava": "0.17.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/noxan/rls.git"
