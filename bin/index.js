@@ -35,7 +35,9 @@ git.dirty().then(
     git.version().then(version => {
       console.log(`Current version: git ${version}, npm@${npmVersion.raw}`);
 
-      // TODO: raise expection if npm and git version do not match
+      if (npmVersion.raw !== version) {
+        throw new Error('Version numbers of latest git tag and npm package missmatch. No idea which one to take.');
+      }
 
       const nextVersion = getNextVersion(npmVersion, identifier);
       console.log('next', identifier, 'is', nextVersion.raw);
