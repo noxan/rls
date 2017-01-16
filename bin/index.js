@@ -7,12 +7,9 @@ const git = require('../lib/git');
 const npm = require('../lib/npm');
 const manifest = require('../lib/manifest');
 
-git.dirty(function (err, dirty) {
-  if (err) {
-    throw err;
-  }
-  console.log('dirty', dirty);
-});
+git.dirty().then(
+  dirty => console.log('dirty', dirty)
+);
 git.version(function (err, version) {
   if (err) {
     throw err;
