@@ -33,8 +33,7 @@ git.dirty().then(
     const npmVersion = npm.version();
 
     git.version().then(version => {
-      console.log('git', version);
-      console.log('npm', npmVersion.raw);
+      console.log(`Current version: git ${version}, npm@${npmVersion.raw}`);
 
       // TODO: raise expection if npm and git version do not match
 
