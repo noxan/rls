@@ -1,5 +1,7 @@
 # rls - minimalistic release
 
+[![Build Status](https://travis-ci.org/noxan/rls.svg?branch=master)](https://travis-ci.org/noxan/rls)
+
 It's never been easier to release a new version of your package.
 
 ## What's it good for?
