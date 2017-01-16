@@ -10,12 +10,9 @@ const manifest = require('../lib/manifest');
 git.dirty().then(
   dirty => console.log('dirty', dirty)
 );
-git.version(function (err, version) {
-  if (err) {
-    throw err;
-  }
-  console.log('git', version);
-});
+git.version().then(
+  version => console.log('git', version)
+);
 
 const npmVersion = npm.version();
 console.log('npm', npmVersion.raw);
