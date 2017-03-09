@@ -1,6 +1,6 @@
 {
   "name": "rls",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Minimal util to generate new releases.",
   "bin": {
     "rls": "./bin/index.js"
